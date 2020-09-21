@@ -1,0 +1,14 @@
+<h1>Edit Page</h1>
+<div>
+  <%= form_tag("/memos/" + @memos.id.to_s,:method => :patch) do %>
+  <div>
+    <%= label_tag "form_title","Title:" %>
+    <%= text_field :memos, :title,id:"form_title" %>
+  </div>
+  <div>
+    <%= label_tag "form_body","Body:" %>
+    <%= text_field :memos, :body,id:"form_body" %>
+  </div>
+  <%= submit_tag "Insert" %>
+  <% end %>
+</div>

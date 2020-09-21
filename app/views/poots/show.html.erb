@@ -1,0 +1,36 @@
+<div>
+  <div class>
+    <%= link_to 'PostArchive',poots_path %>
+    <%= link_to 'Edit',edit_poot_path(@poot) %>
+  </div>
+</div>
+<div>
+  Lost item
+  <div>
+    <h4><%= @poot.item %></h4>
+  </div>
+</div>
+<div>
+  Characteristics of lost items
+  <div>
+    <p><%= simple_format(@poot.feature) %></p>
+  </div>
+</div>
+<div>
+  Where it was found
+  <div>
+    <p><%= simple_format(@poot.location) %></p>
+  </div>
+</div>
+<div>
+  The place where it was delivered
+  <div>
+    <p><%= simple_format(@poot.deliver) %></p>
+  </div>
+</div>
+<div>
+  Name of the person who delivered
+  <div>
+    <p><%= @poot.name %></p>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="">
+  <h1>Post</h1>
+  <div class="">
+    <a href="/poots">PostArchive</a>
+  </div>
+</div>
+<%= form_for @poot do |f| %>
+<div class="">
+  <%= f.label :item,'Lost item' %>
+  <%= f.text_field :item,placeholder:"Enter Lost Item" %>
+</div>
+<div class="">
+  <%= f.label :feature,'Characteristics of lost items' %>
+  <%= f.text_field :feature,placeholder:"Characteristics of lost items" %>
+</div>
+<div class="">
+  <%= f.label :location,'Where you found lost item' %>
+  <%= f.text_field :location,placeholder:"Where you found lost item" %>
+</div>
+<div class="">
+  <%= f.label :deliver,'Where did you deliver?' %>
+  <%= f.text_field :deliver,placeholder:"Where did you deliver?" %>
+</div>
+<div class="">
+  <%= f.label :name,'The name of the person who picked up the lost item' %>
+  <%= f.text_field :name,placeholder:"Enter Name" %>
+</div>
+<%= f.submit 'Post' %>
+<small id="submit-tip">Please check before posting</small>
+<% end %>

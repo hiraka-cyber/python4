@@ -1,0 +1,32 @@
+<div>
+  <h1>Edit</h1>
+  <div class="poots_button">
+    <%= link_to 'PostArchive',poots_path %>
+  </div>
+</div>
+<%= form_for @poot do |f| %>
+ <div>
+   <%= f.label :item,'Lost item' %>
+   <%= f.text_field :item %>
+ </div>
+ <div>
+   <%= f.label :feature,'Characteristics of lost items'%>
+   <%= f.text_field :feature %>
+ </div>
+ <div>
+   <%= f.label :location,'Where you found the lost item'%>
+   <%= f.text_field :location %>
+ </div>
+ <div>
+   <%= f.label :deliver,'Where did you deliver'%>
+   <%= f.text_field :deliver %>
+ </div>
+ <div>
+   <%= f.label :name,'The name of the person who picked up the lost item'%>
+   <%= f.text_field :name %>
+ </div>
+   <%= f.submit 'Poster' %>
+   <small>
+     Please check the content before posting
+   </small>
+ <% end %>

@@ -1,0 +1,15 @@
+<h1>MemosApp</h1>
+<a href="/new">Post memo</a>
+<p><% @memos.each do |memo| %></p>
+<div>
+  <%= memo.title %>:<%= memo.body %>
+</div>
+<div>
+  <form action="/memos/<%= memo.id %>" method="post">
+    <a href="/memos/<%= memo.id %>/edit">Edit</a>
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <button type="submit">Delete</button>
+  </form>
+</div>
+<% end %>

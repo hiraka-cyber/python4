@@ -1,0 +1,11 @@
+<h1>Image PostApps</h1>
+<% @posts.each do |post| %>
+ <p>
+  <%= image_tag post.image.url %>
+ </p>
+<% end %>
+<hr>
+<%= form_for :post,url: 'posts/create' do |f| %>
+ <p><%= f.label "Upload" %><br><%= f.file_field :image%></p>
+ <p><%= f.submit value: 'post' %></p>
+<% end %>

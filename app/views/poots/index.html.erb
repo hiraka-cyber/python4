@@ -1,0 +1,32 @@
+<div class="">
+  <h1>PostArchive</h1>
+  <div>
+    <%= link_to 'Post',new_poot_path %>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Lost item</th>
+      <th scope="col">Where you found the lost item</th>
+      <th scope="col">Who found</th>
+      <th scope="col">PostDate</th>
+      <th scope="col">Update</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @poots.each do |poot| %>
+    <tr>
+      <td><%= poot.item %></td>
+      <td><%= poot.location %></td>
+      <td><%= poot.name %></td>
+      <td><%= poot.created_at.to_s(:datetime_base) %></td>
+      <td><%= poot.updated_at.to_s(:datetime_base) %></td>
+      <td><%= link_to "Details",poot %></td>
+      <td><%= link_to "Delete",poot,method: :delete,data: {confirm: "Delete Post?",cancel: "Cansel",commit: "delete",title: "Delete Confirm"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

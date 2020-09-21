@@ -1,0 +1,2 @@
+class Poot < ApplicationRecord
+end

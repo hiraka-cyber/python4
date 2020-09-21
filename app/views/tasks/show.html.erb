@@ -1,0 +1,27 @@
+<h1>Edit Task</h1>
+<p>Find me in app/views/tasks/show.html.erb</p>
+<form action="/tasks/<%= @task.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label for="task">Task Name</label>
+    <input value="<%= @task.task %>" id="task" type="text" name="task" required>
+  </div>
+  <div>
+    <label>Task State</label>
+    <select name="state">
+      <% @status.each_with_index do |s,i| %>
+      <option value="<%= s %>"><%= s %></option>
+      <% end %>
+    </select>
+
+  </div>
+  <div>
+    <label>Task Deadline</label>
+    <input type="date" name="limit_date" required>
+
+  </div>
+  <p>
+    <button type="submit">update</button>
+  </p>
+</form>
